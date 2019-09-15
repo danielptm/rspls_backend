@@ -1,5 +1,7 @@
 package com.rpsls.rsplsservice.api.resources;
 
+import com.rpsls.rsplsservice.service.ChoicesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
@@ -9,14 +11,23 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Component
-@Path("/choice")
+@Path("/")
 public class ChoiceResource {
 
+    @Autowired
+    ChoicesService choicesService;
+
     @GET
-    @Path("/choices")
+    @Path("choices")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllChoices() {
-        System.out.println("hi");
-        return null;
+        return Response.ok(choicesService.getAllChoices()).build();
+    }
+
+    @GET
+    @Path("choice")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getRandomChoice() {
+        return Response.ok(choicesService.getRandomChoice()).build();
     }
 }
