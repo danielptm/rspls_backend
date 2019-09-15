@@ -15,8 +15,4 @@ public class ResourceGetterTest {
         Assert.assertTrue(ResourceGetter.getFile("choices/choices.json").length() > 0);
     }
 
-    @Test
-    public void test() {
-        System.out.println(ResourceGetter.getFile("choices/choices.json").length());
-    }
 }
