@@ -2,3 +2,4 @@
 Using java.util.logger
 Exception mapper getAllChoices
 No Api authentication
+ObjectMapper singleton in ResultsService

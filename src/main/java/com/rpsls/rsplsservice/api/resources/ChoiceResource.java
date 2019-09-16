@@ -21,7 +21,7 @@ public class ChoiceResource {
     @Path("choices")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllChoices() {
-        return Response.ok(choicesService.getAllChoices()).build();
+        return Response.ok(choicesService.getAllChoices().getAsJsonArray().toString()).build();
     }
 
     @GET
