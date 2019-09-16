@@ -6,11 +6,11 @@ public class Random {
     }
 
     /**
-     * Returns a random number between 1 and 5 inclusive.
+     * Returns a random number between 0 and an upper limit.
      * @return random int
      */
-    public static int numberBetweenOneAndFive() {
-        return (int) Math.floor((5 * Math.random()));
+    public static int numberBetweenZeroAnd(int upperLimit) {
+        return (int) Math.floor((upperLimit * Math.random()));
 
     }
 }

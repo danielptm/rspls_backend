@@ -7,7 +7,6 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.S3Object;
 import org.apache.commons.io.IOUtils;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.StringJoiner;
@@ -31,9 +30,11 @@ public class S3Client {
 
     public static String getResultsFile() {
         String result = null;
-        try (S3Object s3Object = s3Client.getObject("daniels-misc", "rpsls/demo.txt")){
+        try (S3Object s3Object = s3Client.getObject("daniels-misc", "rpsls/demo.txt");
+             InputStream inputStream = s3Object.getObjectContent()) {
+
             StringWriter writer = new StringWriter();
-            InputStream inputStream = s3Object.getObjectContent();
+
             IOUtils.copy(inputStream, writer);
             result = writer.toString();
 

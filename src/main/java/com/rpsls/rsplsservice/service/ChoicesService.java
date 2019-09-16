@@ -23,7 +23,7 @@ public class ChoicesService {
 
     public String getRandomChoice() {
         JsonElement jsonElement = getAllChoices();
-        int randomNumber = Random.numberBetweenOneAndFive();
+        int randomNumber = Random.numberBetweenZeroAnd(5);
         return String.valueOf(jsonElement.getAsJsonArray().get(randomNumber));
     }
 }
