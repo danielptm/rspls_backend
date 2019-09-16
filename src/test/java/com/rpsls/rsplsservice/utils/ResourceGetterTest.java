@@ -1,8 +1,9 @@
 package com.rpsls.rsplsservice.utils;
 
-import org.junit.Assert;
-import org.junit.Test;
+import com.rpsls.rsplsservice.service.S3Client;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -10,9 +11,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:/test-context.xml"})
 public class ResourceGetterTest {
 
-    @Test
+    @Autowired
+    private S3Client s3Client;
+
+    @Ignore
     public void testGetResource() {
-        Assert.assertTrue(ResourceGetter.getFile("choices/choices.json").length() > 0);
+        s3Client.getResultsFile();
     }
 
 }

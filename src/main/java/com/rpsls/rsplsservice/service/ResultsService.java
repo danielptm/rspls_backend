@@ -17,12 +17,19 @@ public class ResultsService {
 
     private static final Logger LOGGER = Logger.getLogger(ResultsService.class.getName());
 
+    private S3Client s3Client;
+
+    @Autowired
+    public ResultsService(S3Client s3Client) {
+        this.s3Client = s3Client;
+    }
 
 
-    public List<Result> getMostRecent10Results(String resultsFile) {
-        // Doing it like this is bad. It should be a singleton.
+    public List<Result> getMostRecent10Results() {
+        String resultsFile = s3Client.getResultsFile();
         List<Result> results = null;
         try {
+            // Doing it like this is bad. It should be a singleton.
             ObjectMapper objectMapper =  new ObjectMapper();
             results = objectMapper.readValue(resultsFile, new TypeReference<ArrayList<Result>>(){});
             results = results.stream().limit(10).collect(Collectors.toList());
@@ -30,5 +37,19 @@ public class ResultsService {
             LOGGER.log(Level.SEVERE, String.format("There was a problem deserializing results from a json string: %s", e.getMessage()));
         }
         return results;
+    }
+
+    public void appendResult(Result result) {
+        String resultsFile = s3Client.getResultsFile();
+        List<Result> results = null;
+        try {
+            // Doing it like this is bad. It should be a singleton.
+            ObjectMapper objectMapper =  new ObjectMapper();
+            results = objectMapper.readValue(resultsFile, new TypeReference<ArrayList<Result>>(){});
+            results.add(result);
+            s3Client.writeContentsToS3(results.toString());
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, String.format("There was a problem WRITING results to s3: %s", e.getMessage()));
+        }
     }
 }
