@@ -1,0 +1,112 @@
+{
+  "1": {
+    "wins": [
+      {
+        "id": 3,
+        "name" : "Scissors"
+      },
+      {
+        "id": 4,
+        "name" : "Lizard"
+      }
+    ],
+    "loses": [
+      {
+        "id": 5,
+        "name" : "Spock"
+      },
+      {
+        "id": 2,
+        "name" : "Paper"
+      }
+    ]
+  },
+  "2": {
+    "wins": [
+      {
+        "id": 1,
+        "name" : "Rock"
+      },
+      {
+        "id": 5,
+        "name" : "Spock"
+      }
+    ],
+    "loses": [
+      {
+        "id": 3,
+        "name" : "Scissors"
+      },
+      {
+        "id": 4,
+        "name" : "Lizard"
+      }
+    ]
+  },
+  "3": {
+    "wins": [
+      {
+        "id": 4,
+        "name" : "Lizard"
+      },
+      {
+        "id": 2,
+        "name" : "Paper"
+      }
+    ],
+    "loses": [
+      {
+        "id": 1,
+        "name" : "Rock"
+      },
+      {
+        "id": 5,
+        "name" : "Spock"
+      }
+    ]
+  },
+  "4": {
+    "wins": [
+      {
+        "id": 2,
+        "name" : "Paper"
+      },
+      {
+        "id": 5,
+        "name" : "Spock"
+      }
+    ],
+    "loses": [
+      {
+        "id": 3,
+        "name" : "Scissors"
+      },
+      {
+        "id": 1,
+        "name" : "Rock"
+      }
+    ]
+  },
+  "5": {
+    "wins": [
+      {
+        "id": 1,
+        "name" : "Rock"
+      },
+      {
+        "id": 3,
+        "name" : "Scissors"
+      }
+    ],
+    "loses": [
+      {
+        "id": 4,
+        "name" : "Lizard"
+      },
+      {
+        "id": 2,
+        "name" : "Paper"
+      }
+    ]
+  }
+}

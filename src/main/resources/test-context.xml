@@ -6,5 +6,6 @@
 
         <bean class="com.rpsls.rsplsservice.service.ResultsService"/>
         <bean class="com.rpsls.rsplsservice.service.S3Client"/>
+        <bean class="com.rpsls.rsplsservice.service.PlayService"/>
 
 </beans>

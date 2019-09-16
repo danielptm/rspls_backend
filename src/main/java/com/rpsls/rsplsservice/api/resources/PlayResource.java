@@ -23,6 +23,6 @@ public class PlayResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response play() {
-        return Response.ok(playService.playRound()).build();
+        return Response.ok().build();
     }
 }

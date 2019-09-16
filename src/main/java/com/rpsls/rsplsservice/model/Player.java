@@ -13,6 +13,10 @@ public class Player {
         return name;
     }
 
+    public String getChoiceId() {
+        return choiceId;
+    }
+
     public static class Builder {
         private String name;
         private String choiceId;
