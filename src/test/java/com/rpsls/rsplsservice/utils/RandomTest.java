@@ -14,4 +14,12 @@ public class RandomTest {
         Assert.assertTrue((number2 >= 0) && (number2 <=4));
         Assert.assertTrue((number3 >= 0) && (number3 <=4));
     }
+
+    @Test
+    public void testReduceComputerResult() {
+        for (int i = 0; i < 1000; i++){
+            String answer = Random.reduceComputerResult(String.valueOf(Random.numberBetweenZeroAnd(100)));
+            Assert.assertTrue(Integer.parseInt(answer) >= 1 && Integer.parseInt(answer) <= 5);
+        }
+    }
 }

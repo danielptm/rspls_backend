@@ -4,35 +4,28 @@ public class Player {
     private String name;
     private String choiceId;
 
-    public Player(Builder builder) {
-        this.name = builder.name;
-        this.choiceId = builder.choiceId;
+    public Player() {
+    }
+
+    public Player(String name, String choiceId) {
+        this.name = name;
+        this.choiceId = choiceId;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getChoiceId() {
         return choiceId;
     }
 
-    public static class Builder {
-        private String name;
-        private String choiceId;
-
-        public Builder(String name) {
-            this.name = name;
-        }
-
-        public Builder withChoiceId(String id) {
-            this.choiceId = id;
-            return this;
-        }
-
-        public Player build() {
-            return new Player(this);
-        }
+    public void setChoiceId(String choiceId) {
+        this.choiceId = choiceId;
     }
 
     @Override

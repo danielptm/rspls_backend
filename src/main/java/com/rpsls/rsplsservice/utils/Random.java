@@ -13,4 +13,9 @@ public class Random {
         return (int) Math.floor((upperLimit * Math.random()));
 
     }
+
+    public static String reduceComputerResult(String choice) {
+        int computerChoice = Integer.parseInt(choice);
+        return String.valueOf(  (int) Math.floor(Double.valueOf(computerChoice)/100 * 4) + 1);
+    }
 }

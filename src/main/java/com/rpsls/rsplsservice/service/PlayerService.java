@@ -14,7 +14,8 @@ public class PlayerService {
         int adjectiveIndex = Random.numberBetweenZeroAnd(7);
         int nounIndex = Random.numberBetweenZeroAnd(5);
         int number = Random.numberBetweenZeroAnd(100);
-        Player playerName = new Player.Builder(adjectives[adjectiveIndex] + nouns[nounIndex] + number).build();
-        return playerName;
+        Player player = new Player();
+        player.setName(adjectives[adjectiveIndex] + nouns[nounIndex] + number);
+        return player;
     }
 }
